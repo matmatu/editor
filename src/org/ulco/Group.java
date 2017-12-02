@@ -7,7 +7,7 @@ public class Group extends GraphicsObject{
     public Group() {
         //super();
         m_objectList = new Vector<GraphicsObject>();
-        m_ID = ++ID.ID;
+        m_ID = ID.getInstance().next();
     }
 
     public int compteurObjet(){
