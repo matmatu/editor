@@ -7,14 +7,6 @@ public class JSON {
         GraphicsObject o = null;
         String str = json.replaceAll("\\s+", "");
         String type = str.substring(str.indexOf("type") + 5, str.indexOf(","));
-
-        /*if (type.compareTo("square") == 0) {
-            o = new Square(str);
-        } else if (type.compareTo("rectangle") == 0) {
-            o = new Rectangle(str);
-        } else if (type.compareTo("circle") == 0) {
-            o = new Circle(str);
-        }*/
         String nomClass = type.substring(0,1).toUpperCase() + type.substring(1);
         try{
             Class classe = Class.forName("org.ulco."+nomClass);
