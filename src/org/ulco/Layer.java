@@ -82,14 +82,19 @@ public class Layer {
     }
 
     public GraphicsObjects select(Point pt, double distance) {
-        GraphicsObjects list = new GraphicsObjects();
+        /*GraphicsObjects list = new GraphicsObjects();
 
         for (GraphicsObject object : m_list) {
             if (object.isClosed(pt, distance)) {
                 list.add(object);
             }
         }
-        return list;
+        return list;*/
+        return Select.select(pt,distance,this);
+    }
+
+    public Vector<GraphicsObject> getM_list() {
+        return m_list;
     }
 
     public String toJson() {

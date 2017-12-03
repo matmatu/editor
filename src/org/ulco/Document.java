@@ -1,6 +1,5 @@
 package org.ulco;
 
-import java.util.Iterator;
 import java.util.Vector;
 
 public class Document {
@@ -104,14 +103,18 @@ public class Document {
     }
 
     public GraphicsObjects select(Point pt, double distance) {
-        GraphicsObjects list = new GraphicsObjects();
+        /*GraphicsObjects list = new GraphicsObjects();
 
         for (Layer layer : m_layers) {
             list.addAll(layer.select(pt, distance));
         }
-        return list;
+        return list;*/
+        return Select.select(pt, distance,this);
     }
 
+    public Vector<Layer> getLayer(){
+        return m_layers;
+    }
     public String toJson() {
         String str = "{ type: document, layers: { ";
 
