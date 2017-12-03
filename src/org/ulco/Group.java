@@ -55,7 +55,12 @@ public class Group extends GraphicsObject{
     }
 
     @Override
-    boolean isClosed(Point pt, double distance) {
+    public boolean isClosed(Point pt, double distance) {
+        for(GraphicsObject obj : m_objectList){
+            if(obj.isClosed(pt,distance)){
+                return true;
+            }
+        }
         return false;
     }
 
